@@ -24,48 +24,51 @@ export const RegisterForm = () => {
             display='flex'
         >
             <form
-            onSubmit={handleSubmit}
-            autoComplete="off"
+                onSubmit={handleSubmit}
+                autoComplete="off"
             >
-            <FormControl
-                marginTop='50px'
-                gap='15px'
-            >
-                <FormLabel
+                <FormControl
+                    marginTop='50px'
+                    gap='15px'
                 >
-                    Username
-                    <Input
-                        type="text"
-                        name="name"
-                        size='sm'
-                    />
-                </FormLabel>
-                <FormLabel
-                >
-                    Email
-                    <Input
-                        type="email"
-                        name="email"
-                        size='sm'
-                    />
-                </FormLabel>
-                <FormLabel
-                >
-                    Password
-                    <Input
-                        type="password"
-                        name="password"
-                        size='sm'
-                        minLength="7"
-                    />
-                </FormLabel>
-                <Button
-                    type="submit"
-                    bg='BtnBgColor'
-                >
-                    Register
-                </Button>
-            </FormControl>
+                    <FormLabel
+                        htmlFor="name"
+                    >
+                        Username
+                        <Input
+                            type="text"
+                            name="name"
+                            size='sm'
+                        />
+                    </FormLabel>
+                    <FormLabel
+                        htmlFor="email"
+                    >
+                        Email
+                        <Input
+                            type="email"
+                            name="email"
+                            size='sm'
+                        />
+                    </FormLabel>
+                    <FormLabel
+                        htmlFor="password"
+                    >
+                        Password
+                        <Input
+                            type="password"
+                            name="password"
+                            size='sm'
+                            minLength="7"
+                        />
+                    </FormLabel>
+                    <Button
+                        type="submit"
+                        bg='BtnBgColor'
+                    >
+                        Register
+                    </Button>
+                </FormControl>
             </form>
         </Box>
     );

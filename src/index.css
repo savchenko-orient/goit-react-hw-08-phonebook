@@ -21,7 +21,6 @@ ul {
 }
 
 .typewriter h1 {
-  /* color: black; */
   font-family: monospace;
   overflow: hidden;
   border-right: 0.1em solid orange;
