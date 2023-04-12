@@ -1,33 +1,37 @@
-import { useDispatch, useSelector } from 'react-redux';
-import { setFilterContacts } from 'redux/filter/filterSlice';
-import { selectContacts, selectFilter } from 'redux/selectors';
+import { useDispatch } from "react-redux";
+import { setFilterContacts } from "redux/contacts/filterSlice";
+import { Box, FormLabel, Input } from "@chakra-ui/react";
 
-const Filter = () => {
-  const dispatch = useDispatch();
-  const contacts = useSelector(selectContacts);
-  const filter = useSelector(selectFilter);
-  const contactsCount = contacts.length;
 
-  const changeFilter = e => {
-    dispatch(setFilterContacts(e.target.value.toLowerCase()))
-  };
+export const Filter = () => {
+    const dispatch = useDispatch();
+    const onChange = event => {
+        const filtered = event.target.value;
+        dispatch(setFilterContacts(filtered));
+    };
 
-  return (
-    <form>
-      <div>
-        <p >Total contacts: <span >{contactsCount}</span></p>
-      </div>
-      <label >
-        Find contacts by name
-        <input
-          type="text"
-          name='filter'
-          value={filter}
-          onChange={changeFilter}
-        />
-      </label>
-    </form>
-  )
+
+    return (
+        <Box
+            justifyContent='center'
+            display='flex'
+            mt='50px'
+        >
+            <FormLabel
+                textAlign='center'
+                justifyContent='center'
+                display='flex'
+                flexDirection='column'
+                minWidth='292px'
+            >
+                Fint contacts by name
+                <Input
+                    type="text"
+                    name="filter"
+                    onChange={onChange}
+                >
+                </Input>
+            </FormLabel>
+        </Box>
+    );
 };
-
-export default Filter;
